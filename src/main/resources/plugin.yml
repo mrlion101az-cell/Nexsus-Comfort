@@ -1,0 +1,23 @@
+name: NexusComfort
+version: ${project.version}
+main: com.nexuscraft.nexuscomfort.ComfortPlugin
+api-version: '1.21'
+author: Nexus Universe
+description: A comfort dial for every player -- choose how scary, prankish, bodily, violent and mature the server is for you. Other Nexus plugins ask it before they act.
+softdepend: [NexusWorldWar]
+
+commands:
+  comfort:
+    description: Choose how intense the server is for you, or (staff) see and change anyone's settings.
+    aliases: [comf, intensity]
+    permission: nexuscomfort.use
+    permission-message: You cannot use the comfort commands here.
+    usage: /comfort [menu|status|gentle|standard|intense|<category> on|off|default]
+
+permissions:
+  nexuscomfort.use:
+    description: Change your own comfort settings.
+    default: true
+  nexuscomfort.admin:
+    description: See and change any player's settings; reload.
+    default: op

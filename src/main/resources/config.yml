@@ -1,0 +1,25 @@
+# NexusComfort -- a comfort dial for every player.
+# Presets: gentle (everything off), standard (scary, pranks and body effects on; PvP outside wars and
+# mature themes off), intense (everything on). Players can also flip any single switch with /comfort.
+# Categories: scary, pranks, body, pvp, mature.
+
+server:
+  default-preset: standard     # where a player starts until they choose (gentle, standard or intense)
+  off-categories: []           # categories switched off for EVERYONE, e.g. [mature]
+  welcome-hint: true           # tell each player once that /comfort exists
+
+# The outside guard. It cancels a few things other plugins do to a player who has turned them off, without those
+# plugins knowing. It can only go by what an event shows, so it is narrow on purpose.
+guard:
+  pvp: true                    # block player-vs-player damage unless BOTH have pvp on (or both are fighting in a world war)
+  pvp-exempt-worlds: []        # worlds where this guard never applies, e.g. an arena world
+  # Potion effects added BY A PLUGIN (not drinks, beacons or food) that are cancelled for players who have the
+  # category off. Use the effect's key: darkness, nausea, blindness, levitation, slowness ...
+  scary-effects: [darkness]
+  pranks-effects: []
+  body-effects: [nausea]
+  mature-effects: []
+  teleport-nudge-blocks: 8     # plugin-made teleports this short are cancelled for players with pranks off (0 = off)
+
+messages:
+  prefix: "&d&l[Comfort] &r"
